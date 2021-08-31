@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "orders",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "contact_no": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "top_level_discount": {
+      "type": "decimal"
+    },
+    "shipping": {
+      "type": "decimal"
+    },
+    "invoice_date": {
+      "type": "date"
+    },
+    "bill_to": {
+      "type": "enumeration",
+      "enum": [
+        "cash_ac",
+        "client_ac"
+      ]
+    },
+    "client": {
+      "via": "orders",
+      "model": "clients"
+    },
+    "order_comp": {
+      "type": "component",
+      "repeatable": true,
+      "component": "orders.c-orders"
+    },
+    "total_price": {
+      "type": "decimal",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "paid",
+        "partially_paid",
+        "pending",
+        "refunded"
+      ],
+      "default": "paid",
+      "required": true
+    },
+    "advance": {
+      "type": "decimal"
+    },
+    "Installment": {
+      "type": "boolean"
+    },
+    "installments": {
+      "type": "component",
+      "repeatable": true,
+      "component": "orders.installments"
+    }
+  }
+}

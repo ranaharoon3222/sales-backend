@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_orders_c_orders",
+  "info": {
+    "name": "c_orders",
+    "icon": "shopping-basket",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "quantity": {
+      "type": "decimal"
+    },
+    "product": {
+      "model": "products"
+    }
+  }
+}

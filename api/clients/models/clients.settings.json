@@ -1,0 +1,98 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "name": "clients",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "guardian_name": {
+      "type": "string"
+    },
+    "prefered_address": {
+      "type": "string"
+    },
+    "occupation": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "permanent_address": {
+      "type": "string"
+    },
+    "work_place": {
+      "type": "string"
+    },
+    "monthly_income": {
+      "type": "string"
+    },
+    "house_occupation": {
+      "type": "enumeration",
+      "enum": [
+        "rent",
+        "own"
+      ]
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "cnic_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "office_phone": {
+      "type": "string"
+    },
+    "mobile_no": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "refrences": {
+      "via": "clients",
+      "collection": "refrences"
+    },
+    "orders": {
+      "via": "client",
+      "collection": "orders"
+    },
+    "cnic": {
+      "type": "string",
+      "maxLength": 13,
+      "minLength": 13,
+      "unique": true,
+      "required": true
+    }
+  }
+}

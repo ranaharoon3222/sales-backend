@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "products",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product_name": {
+      "type": "string",
+      "required": true
+    },
+    "item_code": {
+      "type": "string",
+      "unique": true
+    },
+    "print_name": {
+      "type": "string"
+    },
+    "model_no": {
+      "type": "string"
+    },
+    "purchase_price": {
+      "type": "decimal",
+      "required": true
+    },
+    "sale_price": {
+      "type": "decimal"
+    },
+    "min_sale_price": {
+      "type": "decimal"
+    },
+    "mrp": {
+      "type": "decimal"
+    },
+    "opening_stock": {
+      "type": "decimal"
+    },
+    "stock": {
+      "type": "decimal"
+    },
+    "stock_value": {
+      "type": "decimal"
+    },
+    "unit": {
+      "type": "enumeration",
+      "enum": [
+        "PCS",
+        "MTR",
+        "DOZ",
+        "CMS"
+      ]
+    },
+    "brand": {
+      "via": "products",
+      "model": "brand"
+    }
+  }
+}
