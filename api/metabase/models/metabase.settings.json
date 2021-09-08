@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "metabases",
+  "info": {
+    "name": "metabase",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "sales",
+        "clients",
+        "products",
+        "brands",
+        "orders",
+        "reminders"
+      ]
+    }
+  }
+}

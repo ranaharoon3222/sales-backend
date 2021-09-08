@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/metabases",
+      "handler": "metabase.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/metabases/count",
+      "handler": "metabase.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/metabases/:id",
+      "handler": "metabase.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/metabases",
+      "handler": "metabase.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/metabases/:id",
+      "handler": "metabase.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/metabases/:id",
+      "handler": "metabase.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
