@@ -12,6 +12,25 @@
     },
     "product": {
       "model": "products"
+    },
+    "sale_price": {
+      "type": "decimal"
+    },
+    "discount": {
+      "type": "decimal"
+    },
+    "unit": {
+      "type": "enumeration",
+      "enum": [
+        "PCS",
+        "MTR"
+      ]
+    },
+    "total_price": {
+      "type": "decimal"
+    },
+    "label": {
+      "type": "string"
     }
   }
 }
