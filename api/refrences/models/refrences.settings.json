@@ -25,26 +25,27 @@
       "pluginOptions": {}
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "guardian_name": {
       "type": "string"
     },
     "age": {
-      "required": true,
+      "required": false,
       "type": "integer"
     },
     "permanent_address": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "work_place": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "monthly_income": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "house_occupation": {
       "type": "enumeration",
@@ -52,25 +53,25 @@
         "rent",
         "own"
       ],
-      "required": true
+      "required": false
     },
     "office_phone": {
       "type": "string"
     },
     "mobile_no": {
       "type": "string",
-      "required": true
+      "required": false
     },
-    "prefered_adress": {
+    "prefered_address": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "occupation": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "image": {
-      "collection": "file",
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "files",
@@ -83,7 +84,7 @@
     },
     "designation": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "clients": {
       "via": "refrences",
