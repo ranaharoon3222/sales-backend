@@ -9,6 +9,14 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/products/:_id/build",
+      "handler": "products.build",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "GET",
       "path": "/products/count",
       "handler": "products.count",

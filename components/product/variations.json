@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_product_variations",
+  "info": {
+    "name": "variations",
+    "icon": "ambulance"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.options"
+    }
+  }
+}

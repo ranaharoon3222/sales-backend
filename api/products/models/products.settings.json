@@ -60,6 +60,19 @@
     "brand": {
       "via": "products",
       "model": "brand"
+    },
+    "variations": {
+      "via": "product",
+      "collection": "variations"
+    },
+    "attribute": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.variations"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "product_name"
     }
   }
 }

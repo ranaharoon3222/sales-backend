@@ -71,6 +71,11 @@
       "type": "component",
       "repeatable": true,
       "component": "orders.installments"
+    },
+    "user": {
+      "via": "orders",
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }
