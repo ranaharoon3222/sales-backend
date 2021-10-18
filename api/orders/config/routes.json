@@ -10,6 +10,22 @@
     },
     {
       "method": "GET",
+      "path": "/orders/installment",
+      "handler": "orders.installment",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/orders/approve",
+      "handler": "orders.approve",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/orders/count",
       "handler": "orders.count",
       "config": {

@@ -15,6 +15,51 @@ const { parseMultipartData, sanitizeEntity } = require("strapi-utils");
  */
 
 module.exports = {
+  async approve(ctx) {
+    const data = ctx.request.body;
+    console.log(data);
+    let order = await strapi.query("orders").findOne({ id: data.id });
+    let entity = await strapi.query("orders").update(
+      { id: data.id },
+      {
+        installments: [
+          ...order.installments,
+          {
+            id: data.i_id,
+            invoice: data.invoice,
+            status: data.status,
+            price: data.price,
+          },
+        ],
+      }
+    );
+
+    return sanitizeEntity(entity, { model: strapi.models.orders });
+  },
+
+  async installment(ctx) {
+    const knex = strapi.connections.default;
+    const result = await knex("components_orders_installments")
+      .join(
+        "orders_components",
+        "components_orders_installments.id",
+        "=",
+        "orders_components.component_id"
+      )
+      .join("orders", "orders.id", "=", "orders_components.order_id")
+      .select(
+        "orders.name",
+        "orders.id as invoice_no",
+        "orders.total_price",
+        "components_orders_installments.id",
+        "components_orders_installments.invoice",
+        "components_orders_installments.status",
+        "components_orders_installments.price"
+      );
+
+    return _.groupBy(result, "status");
+  },
+
   async create(ctx) {
     const data = ctx.request.body;
     const orderItems = data.order_comp.map(async (item) => {
